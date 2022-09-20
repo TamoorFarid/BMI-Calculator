@@ -1,0 +1,72 @@
+<div class="container-fluid" id="bg">
+  <nav class="navbar" id="bg">
+    <div class="container-fluid" >
+      <a class="navbar-brand rounded p-1 fw-bold" id="bg-2" href="#" >KhanDanFitness</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="alert alert-success" *ngIf="underWeightAler==true" role="alert">
+      You are underweight!,try taking high protien diet to help weight gain.
+    </div>
+    <div class="alert alert-success" *ngIf="normalWeightAler==true" role="alert">
+      Congratulations you have an ideal BMI!
+    </div>
+    <div class="alert alert-success" *ngIf="overWeightAler==true" role="alert">
+      You are Overweight, avoid deep fried items and adopt a healthy lifestyle!
+    </div>
+    <div class="alert alert-success" *ngIf="obeseAler==true" role="alert">
+      Your BMI is equal or above 30! Adopt a healthy diet and guided workouts.
+    </div>
+    <div class="accordion ">
+      <div class="accordion-item bg-success text-white">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            BMI Scale
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul>
+              <li>Underweight = <18.5</li>
+              <li>Normal Weight = 18.5-24.9</li>
+              <li>Overweight = 25-29.9</li>
+              <li>Obesity = BMI of 30 or greater</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="bg">
+    <div class="row text-white ">
+      <div class="col-md-6 my-auto ">
+        <div class="mb-3">
+          <h5 class="text-center">Enter your weight and height to get your BMI</h5>
+          <label class="form-label">Weight (Kgs)</label>
+          <p><input type="number" class="form-control" placeholder="Enter your weight in Kg" id="username" name="weight" [(ngModel)]="weight"></p>
+          <label class="form-label">Height (cm)</label>
+          <p><input type="number" placeholder="Enter your height in cm" class="form-control" name="height"[(ngModel)]="height"></p>
+          <label class="form-label">BMI</label>
+          <p><input type="number" readonly placeholder="Get your results here" disabled value="{{result}}" class="form-control"></p>
+          <button class="btn" id="btn-bg" (click)="clickme()">Get Bmi</button>
+        </div>
+      </div>
+      <div class="col-md-6 order-first order-md-last">
+        <img *ngIf="welcome==true" src="assets/images/Welcome-bro.png" class="img-fluid" alt="">
+        <img *ngIf="normalweight==true" src="assets/images/normal weight.png" class="img-fluid" alt="">
+        <img *ngIf="underweight==true" src="assets/images/underweight.png" class="img-fluid" alt="">
+        <img *ngIf="overweight==true" src="assets/images/overweight.png" class="img-fluid" alt="">
+        <img *ngIf="obesity==true" src="assets/images/obesity.png" class="img-fluid" alt="">
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+
+  </footer>
+
+</div>
